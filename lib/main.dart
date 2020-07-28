@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multiplyapp/expert_mode_screen.dart';
 import 'package:multiplyapp/training_mode_screen.dart';
+import 'package:multiplyapp/training_mode_designed_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -40,7 +41,7 @@ class MainPage extends StatelessWidget {
               color: Colors.lightBlueAccent,
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return TrainingModePage();
+                  return TrainingModeDesigned();
                 }));
               }),
         ],
