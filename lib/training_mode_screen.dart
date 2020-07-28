@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multiplyapp/components/feedback_icon.dart';
-import 'package:multiplyapp/components/number_button.dart';
+import 'package:multiplyapp/components/design_elements.dart';
 import 'package:multiplyapp/components/multiply_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

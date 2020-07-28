@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-IconData topIcon = FontAwesomeIcons.smileWink;
-Color topIconColor = Colors.green;
+IconData topIcon;
+Color topIconColor;
 
 class FeedbackIcon extends StatelessWidget {
   FeedbackIcon({@required this.icon, this.color});

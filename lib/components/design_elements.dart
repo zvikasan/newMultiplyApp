@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'multiply_brain.dart';
 
 String trainingAnswer = 'ZZ';
 

@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:multiplyapp/components/number_button.dart';
+import 'package:multiplyapp/components/design_elements.dart';
 import 'feedback_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,8 +10,8 @@ int correctAnswers = 0;
 int wrongAnswers = 0;
 
 void setNumbers() {
-  firstNumber = Random().nextInt(8) + 1;
-  secondNumber = Random().nextInt(8) + 1;
+  firstNumber = Random().nextInt(9) + 1;
+  secondNumber = Random().nextInt(9) + 1;
 }
 
 void calculateAnswer(int first, int second) {
