@@ -42,6 +42,7 @@ class MainPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return TrainingModeDesigned();
+                  // return TrainingModePage();
                 }));
               }),
         ],

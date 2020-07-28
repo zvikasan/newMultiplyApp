@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String trainingAnswer = 'ZZ';
+String trainingAnswer = '?';
 
 class NumberButton extends StatelessWidget {
   NumberButton({this.buttonNumber, this.buttonPressed});

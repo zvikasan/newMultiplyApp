@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:flutter/material.dart';
 import 'package:multiplyapp/components/feedback_icon.dart';
 import 'package:multiplyapp/components/design_elements.dart';
 import 'package:multiplyapp/components/multiply_brain.dart';
@@ -13,6 +12,15 @@ class TrainingModeDesigned extends StatefulWidget {
 
 class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
   @override
+  void initState() {
+    setNumbers();
+    feedbackIcon = FontAwesomeIcons.meh;
+    feedbackIconColor = Color(0XFFE6ACB4);
+    correctAnswers = 0;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -24,7 +32,23 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
+          backgroundColor: Color(0xff874583),
           title: Text('Multiply Game'),
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      resetGame();
+                    });
+                  },
+                  child: Icon(
+                    Icons.refresh,
+                    size: 26.0,
+                  ),
+                )),
+          ],
         ),
         body: Stack(children: <Widget>[
           Align(
@@ -99,9 +123,122 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
             ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.all(3.0),
+                    width: 120.0,
+                    height: 90.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(36.0),
+                      color: const Color(0xAFE3CDE3),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0x66212020),
+                          offset: Offset(0, 3),
+                          blurRadius: 6,
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          '$correctAnswers',
+                          style: TextStyle(
+                            fontSize: 40.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff4b366b),
+                          ),
+                        ),
+                        Text(
+                          'CORRECT',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff4b366b),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // child:
+                  ),
+                  FeedBackIcon(
+                    icon: feedbackIcon,
+                    color: feedbackIconColor,
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(3.0),
+                    width: 120.0,
+                    height: 90.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(36.0),
+                      color: const Color(0xAFE3CDE3),
+                      boxShadow: [
+                        BoxShadow(
+                          color: const Color(0x66212020),
+                          offset: Offset(0, 3),
+                          blurRadius: 6,
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          '$wrongAnswers',
+                          style: TextStyle(
+                            fontSize: 40.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff4b366b),
+                          ),
+                        ),
+                        Text(
+                          'MISTAKES',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff4b366b),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // child:
+                  ),
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.all(10.0),
+                margin: EdgeInsets.symmetric(horizontal: 20.0),
+                width: 324.0,
+                height: 90.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(36.0),
+                  color: const Color(0xAFE3CDE3),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0x66212020),
+                      offset: Offset(0, 3),
+                      blurRadius: 6,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      '$firstNumber x $secondNumber = $trainingAnswer',
+                      style: TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff4b366b),
+                      ),
+                    ),
+                  ],
+                ),
+              ), // 8x8=?
               Container(
                 padding: EdgeInsets.all(25.0),
                 margin: EdgeInsets.symmetric(horizontal: 20.0),
@@ -238,7 +375,7 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
                     ),
                   ],
                 ),
-              ),
+              ), // numpad
             ],
           ),
         ]),
@@ -301,3 +438,28 @@ class OtherButton extends StatelessWidget {
     );
   }
 }
+
+class FeedBackIcon extends StatelessWidget {
+  FeedBackIcon({@required this.icon, this.color});
+
+  final IconData icon;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Icon(
+        icon,
+        size: 80.0,
+        color: color,
+      ),
+      constraints: BoxConstraints.tightFor(
+        width: 100.0,
+        height: 100.0,
+      ),
+    );
+  }
+}
+
+IconData feedbackIcon;
+Color feedbackIconColor;
