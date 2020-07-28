@@ -1,9 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:multiplyapp/components/design_elements.dart';
-import 'feedback_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:multiplyapp/training_mode_designed_screen.dart';
+import 'package:multiplyapp/training_mode_screen.dart';
 
 int firstNumber;
 int secondNumber;
