@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:adobe_xd/pinned.dart';
-import 'package:multiplyapp/components/feedback_icon.dart';
-import 'package:multiplyapp/components/design_elements.dart';
 import 'package:multiplyapp/components/multiply_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+IconData feedbackIcon;
+Color feedbackIconColor;
+String trainingAnswer = '?';
 
 class TrainingModeDesigned extends StatefulWidget {
   @override
@@ -460,6 +461,3 @@ class FeedBackIcon extends StatelessWidget {
     );
   }
 }
-
-IconData feedbackIcon;
-Color feedbackIconColor;
