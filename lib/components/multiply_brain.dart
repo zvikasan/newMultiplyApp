@@ -1,12 +1,13 @@
 import 'dart:math';
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:multiplyapp/components/design_elements.dart';
 import 'package:multiplyapp/training_mode_screen.dart';
 
 int firstNumber;
 int secondNumber;
 int correctAnswers = 0;
 int wrongAnswers = 0;
+String trainingAnswer = '?';
 
 void setNumbers() {
   firstNumber = Random().nextInt(9) + 1;
@@ -16,15 +17,15 @@ void setNumbers() {
 void calculateAnswer(int first, int second) {
   if (int.parse(trainingAnswer) == first * second) {
     // print('GOOD !!!');
+    audioCache.play('good.mp3');
     setNumbers();
     feedbackIcon = FontAwesomeIcons.smile;
-    feedbackIconColor = Color(0XFFE6ACB4);
     correctAnswers++;
     clearAnswer();
   } else {
     // print('BAD !!!');
+    audioCache.play('cat.mp3');
     feedbackIcon = FontAwesomeIcons.sadCry;
-    feedbackIconColor = Color(0XFFE6ACB4);
     wrongAnswers++;
     clearAnswer();
   }
@@ -47,6 +48,5 @@ void resetGame() {
   wrongAnswers = 0;
   trainingAnswer = '?';
   feedbackIcon = FontAwesomeIcons.meh;
-  feedbackIconColor = Color(0XFFE6ACB4);
   setNumbers();
 }

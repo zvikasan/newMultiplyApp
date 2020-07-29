@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:multiplyapp/components/multiply_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:multiplyapp/components/design_elements.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:audioplayers/audio_cache.dart';
+
+AudioCache audioCache;
 
 class TrainingModeDesigned extends StatefulWidget {
   @override
@@ -14,6 +19,9 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
     feedbackIcon = FontAwesomeIcons.meh;
     feedbackIconColor = Color(0XFFE6ACB4);
     correctAnswers = 0;
+    audioCache = AudioCache(
+        prefix: "audio/",
+        fixedPlayer: AudioPlayer()..setReleaseMode(ReleaseMode.STOP));
     super.initState();
   }
 
@@ -410,54 +418,3 @@ class NumpadButton extends StatelessWidget {
     );
   }
 }
-
-class OtherButton extends StatelessWidget {
-  final Widget buttonChild;
-  final Function onPressed;
-
-  OtherButton({
-    @required this.buttonChild,
-    @required this.onPressed,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      elevation: 8.0,
-      child: buttonChild,
-      onPressed: onPressed,
-      constraints: BoxConstraints.tightFor(
-        width: 60.0,
-        height: 60.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Colors.white,
-    );
-  }
-}
-
-class FeedBackIcon extends StatelessWidget {
-  FeedBackIcon({@required this.icon, this.color});
-
-  final IconData icon;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Icon(
-        icon,
-        size: 80.0,
-        color: color,
-      ),
-      constraints: BoxConstraints.tightFor(
-        width: 100.0,
-        height: 100.0,
-      ),
-    );
-  }
-}
-
-IconData feedbackIcon;
-Color feedbackIconColor;
-String trainingAnswer = '?';
