@@ -57,7 +57,7 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
         ),
         body: Stack(children: <Widget>[
           Align(
-            alignment: Alignment(1.0, -0.85),
+            alignment: Alignment(1.0, -0.75),
             child: Container(
               width: 146.0,
               height: 107.0,
