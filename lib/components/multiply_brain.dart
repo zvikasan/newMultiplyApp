@@ -1,8 +1,4 @@
 import 'dart:math';
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-=======
->>>>>>> organizingTrainingScreen
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:multiplyapp/components/design_elements.dart';
 import 'package:multiplyapp/training_mode_screen.dart';

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multiplyapp/expert_mode_screen.dart';
-<<<<<<< HEAD
-import 'package:multiplyapp/training_mode_designed_screen.dart';
-=======
 import 'package:multiplyapp/training_mode_screen.dart';
->>>>>>> organizingTrainingScreen
 
 void main() {
   runApp(MyApp());
