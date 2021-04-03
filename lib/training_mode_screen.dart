@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:multiplyapp/components/multiply_brain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -47,10 +48,12 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      resetGame();
-                    });
+                  onTap: () async {
+                    // setState(() {
+                    //   resetGame();
+                    // });
+                    FilePickerResult result =
+                        await FilePicker.platform.pickFiles();
                   },
                   child: Icon(
                     Icons.refresh,
