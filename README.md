@@ -1,4 +1,11 @@
-# multiplyapp
-Multiplication tables learning application for mobile devices (Dart/Flutter).
-Since this app will be very complicated, it needs two developers. 
-I'm here to save the world!
+# :heavy_multiplication_x: Multiply App :heavy_multiplication_x:
+
+## This is a collaboration project making a game app that teaches kids multiplication
+
+### :heavy_multiplication_x: The Multiply App will have two modes: Training and Expert
+
+### :heavy_multiplication_x: Written in Flutter / Dart
+
+#### Training mode screenshot:
+
+![Multiply app training mode](https://github.com/zvikasan/newMultiplyApp/blob/master/app_screenshot.jpg?raw=true)
