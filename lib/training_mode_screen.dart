@@ -22,7 +22,7 @@ class _TrainingModeDesignedState extends State<TrainingModeDesigned> {
     feedbackIconColor = Color(0XFFE6ACB4);
     correctAnswers = 0;
     audioCache = AudioCache(
-        prefix: "audio/",
+        prefix: "assets/audio/",
         fixedPlayer: AudioPlayer()..setReleaseMode(ReleaseMode.STOP));
     super.initState();
     SystemChrome.setPreferredOrientations([
