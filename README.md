@@ -8,4 +8,4 @@
 
 #### Training mode screenshot:
 
-![Multiply app training mode](https://github.com/zvikasan/newMultiplyApp/blob/master/app_screenshot.jpg?raw=true)
+![Multiply app training mode](https://github.com/zvikasan/newMultiplyApp/blob/master/app_screenshot.png?raw=true)
